@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events - FOB | Marketing Material Portal</title>
+
+  <link rel="icon" type="image/png" href="images/favicon/Mouse Favicon.png" />
+  <link rel="shortcut icon" href="images/favicon/Mouse Favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .events-shell {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 20px 3rem;
+    }
+
+    .events-stack {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .events-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-card);
+      padding: 1.5rem;
+    }
+
+    .events-card h2 {
+      margin: 0 0 0.65rem;
+      color: var(--text);
+      line-height: 1.1;
+      font-size: 1.6rem;
+    }
+
+    .events-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .events-jump-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .events-jump-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.7rem 1rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      background: var(--nw-green);
+      color: #ffffff;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .events-jump-btn:hover {
+      background: var(--nw-green-dark);
+      transform: translateY(-1px);
+    }
+
+    .events-highlight-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .events-highlight-main {
+      background: linear-gradient(135deg, var(--nw-green-dark), var(--nw-green));
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 1.35rem;
+    }
+
+    .events-highlight-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.92;
+      margin-bottom: 0.5rem;
+    }
+
+    .events-highlight-office {
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .events-highlight-count {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 0.96;
+    }
+
+    .events-highlight-side {
+      background: var(--nw-green-soft);
+      border: 1px solid rgba(133, 196, 70, 0.25);
+      border-radius: 20px;
+      padding: 1.25rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .events-form-wrap {
+      margin-top: 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .events-form-embed {
+      display: block;
+      width: 100%;
+      height: 960px;
+      border: 0;
+      background: #ffffff;
+    }
+
+    .events-form-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .events-mini-link {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--nw-green-dark);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .events-mini-link:hover {
+      text-decoration: underline;
+    }
+
+    .events-help-note {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-lg);
+      background: var(--nw-green-soft);
+      border: 1px solid rgba(133, 196, 70, 0.25);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .events-help-note a {
+      text-decoration: underline;
+    }
+
+    .events-items-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .events-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .events-item h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .events-item p {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1100px) {
+      .events-items-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .events-highlight-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .events-card,
+      .events-item {
+        border-radius: 18px;
+        padding: 1.1rem;
+      }
+
+      .events-items-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .events-form-embed {
+        height: 1100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header google-style-header">
+  <div class="header-top centered-header-layout">
+
+
+    <div class="header-center">
+      <input
+        type="text"
+        id="portalSearch"
+        class="portal-search"
+        placeholder="Search service center, form, or event items..."
+      />
+    </div>
+
+    <nav class="nav-bar centered-nav">
+      <a href="catalog.html" class="header-btn">Home - Catalog</a>
+      <a href="events-nw.html" class="header-btn">Events</a>
+      <a href="https://nwst-operations.netlify.app/" class="header-btn">Office Forms (Uniforms, Invoices, Etc)</a>
+      <a href="https://marketing-fob.netlify.app/service-standards" class="header-btn">Service Standards</a>
+      <a href="faq/index.html" class="header-btn">FAQ</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero-banner">
+  <h1 class="hero-title">Family of Brands Event Materials</h1>
+  <p class="hero-subtitle">
+    Celebrate your community and request the materials your office needs in one spot.
+  </p>
+</section>
+
+
+<main>
+  <div class="events-shell">
+    <div class="events-stack">
+
+        <div class="events-jump-row">
+          <a href="#event-material-form" class="events-jump-btn">Event Material Form</a>
+          <a href="#event-material-items" class="events-jump-btn">Event Materials Available</a>
+          <a href="https://pestdefense.sharepoint.com/sites/NWST-Home/Marketing/SitePages/Test---Marketing-Support.aspx?csf=1&web=1&e=sDbqVu" class="events-jump-btn">Event Calendar - SharePoint Link</a>
+        </div>
+      </section>
+
+      <div class="events-help-note">
+  Some event materials may not be available for all brands or color variations. Availability can vary based on inventory, region, or brand guidelines.  
+  For questions or specific requests, contact 
+  <a href="mailto:marketingcommunications@callnorthwest.com">
+    marketingcommunications@callnorthwest.com
+  </a>.
+</div>
+
+
+      <section class="events-card" id="event-material-form">
+        <div class="events-form-top">
+          <div>
+            <h2>Event Material Form</h2>
+            <p>
+              Submit your request here for event material support.
+            </p>
+          </div>
+
+          <a
+            class="events-mini-link"
+            href="https://app.smartsheet.com/b/form/019d4f9551767702a58f2a67a528a678"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open form in new tab →
+          </a>
+        </div>
+
+        <div class="events-form-wrap">
+          <iframe
+            class="events-form-embed"
+            src="https://app.smartsheet.com/b/form/019d4f9551767702a58f2a67a528a678"
+            title="Event Material Form"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </div>
+
+        <div class="events-help-note">
+          Questions? Email
+          <a href="mailto:marketingcommunications@callnorthwest.com">marketingcommunications@callnorthwest.com</a>.
+        </div>
+      </section>
+
+      <section class="events-card" id="event-material-items">
+        <h2>Event Material Items</h2>
+        <p>
+          Reach out to Marketing for all materials listed below. When you're ready to order, please use the form above.
+        </p>
+
+        <div class="events-items-grid">
+          <article class="events-item">
+            <h3>Takeover Postcard (Local Business Takeovers)</h3>
+            <p>$25 off a new service.</p>
+          </article>
+
+          <article class="events-item">
+            <h3>HR Recruiting Card</h3>
+            <p>Business cards that remind a future teammate about our Mouse Family.</p>
+          </article>
+
+          <article class="events-item">
+            <h3>Branded Pen</h3>
+            <p>Simple branded giveaway item for lighter-touch event engagement.</p>
+          </article>
+
+          <article class="events-item">
+            <h3>Coozies</h3>
+            <p>Mouse Coozies make a lasting impression.</p>
+          </article>
+
+          <article class="events-item">
+            <h3>Recruiting Event Kit</h3>
+            <p>Recruiting cards, Recruiting Flyer, Tablecloth & Pullup Banner.</p>
+          </article>
+
+                    <article class="events-item">
+            <h3>Review Cards</h3>
+            <p>How is Your service center's Google Reviews? Use a review card to follow up with customers after an extraordindary stop.</p>
+          </article>
+
+                              <article class="events-item">
+            <h3>Mouse Tattoos - Temp. Tattoos</h3>
+            <p>Temporary tattoos perfect for a family-friendly event.</p>
+          </article>
+
+                                        <article class="events-item">
+            <h3>Green Sunglasses</h3>
+            <p>A Northwest giveway that makes the sunny moments a little better.</p>
+          </article>
+
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-grid">
+
+      <div class="footer-brand-block">
+        <a href="catalog.html" class="footer-brand-link">
+          <div class="footer-brand-text">
+            <span class="footer-brand-title">Marketing Material Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Portal</h3>
+        <div class="footer-links">
+          <a href="catalog.html">Marketing Materials</a>
+          <a href="events-nw.html">Events</a>
+          <a href="faq/index.html">FAQ</a>
+          <a href="mailto:marketingcommunications@callnorthwest.com?subject=Marketing%20Request&body=Hi%20Marketing%20Team,%0D%0A%0D%0AI%20need%20help%20with:%0D%0A-%0D%0A%0D%0AOffice:%0D%0AManager:%0D%0ADue%20Date:%0D%0A">
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Ops Support</h3>
+        <div class="footer-links">
+          <a href="https://nwst-operations.netlify.app/">Ops Support Portal</a>
+          <a href="https://app.smartsheet.com/b/form/c79abe03588f4e57ba945fe9afda2477">Mouse Apparel</a>
+          <a href="https://app.smartsheet.com/b/form/7ce55f3f15054b348da38054a92fb0be">Uniform Teamwear</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Support</h3>
+        <div class="footer-contact-list">
+          <span>Marketing Communications Team</span>
+          <a href="mailto:marketingcommunications@callnorthwest.com">
+            marketingcommunications@callnorthwest.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const search = document.getElementById("portalSearch");
+
+  if (search) {
+    search.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+
+      const q = (e.target.value || "").toLowerCase().trim();
+
+      if (q.includes("service") || q.includes("leader") || q.includes("most events")) {
+        document.getElementById("event-leader")?.scrollIntoView({ behavior: "smooth" });
+      } else if (q.includes("form") || q.includes("request")) {
+        document.getElementById("event-material-form")?.scrollIntoView({ behavior: "smooth" });
+      } else if (q.includes("item") || q.includes("materials")) {
+        document.getElementById("event-material-items")?.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
