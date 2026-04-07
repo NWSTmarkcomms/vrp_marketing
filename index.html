@@ -3,101 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Product Flyers</title>
+  <title>Volunteer Rid-A-Pest Marketing Portal</title>
+  <link rel="icon" type="image/png" href="images/favicon/vrp-favicon.png" />
+  <link rel="shortcut icon" href="images/favicon/vrp-favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <iframe name="hiddenFrame" style="display:none;"></iframe>
-    
-  <header class="header">
-    <div class="logo-nav-container">
-      <img src="images/logo-placeholder.png" alt="Company Logo" class="logo" />
-    
+  <iframe name="hiddenFrame" style="display:none;"></iframe>
 
+  <header class="site-header google-style-header">
+    <div class="header-top centered-header-layout">
 
-  
-<nav class="navbar"> 
-  <a href="catalog.html">All Materials</a>
-  <a href="door-hangers.html">Door Hangers</a>
-  <a href="leave-behinds.html">Leave Behinds</a>
-  <a href="events-nw.html">Events</a>
-  <a href="flyers.html">Flyers</a>
-  <a href="takeover.html">Takeover Cards</a>
-  <a href="thank-you-cards.html">Thank You Cards</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact Us</a>
-</nav>
+      <div class="header-left">
+        <img src="images/logos/vrp-logo.png" alt="Volunteer Rid-A-Pest Logo" class="brand-logo huge-logo" />
+      </div>
 
-</div>
+      <div class="header-center">
+        <input
+          type="text"
+          id="catalogSearch"
+          class="portal-search"
+          placeholder="Search marketing materials..."
+        />
+      </div>
 
-
+      <nav class="nav-bar centered-nav">
+        <a href="catalog.html" class="header-btn">All Materials</a>
+        <a href="door-hangers.html" class="header-btn">Door Hangers</a>
+        <a href="leave-behinds.html" class="header-btn">Leave Behinds</a>
+        <a href="events-vrp.html" class="header-btn">Events</a>
+        <a href="flyers.html" class="header-btn">Flyers</a>
+        <a href="takeover.html" class="header-btn">Takeover Cards</a>
+        <a href="thank-you-cards.html" class="header-btn">Thank You Cards</a>
+        <a href="faq/index.html" class="header-btn">FAQ</a>
+        <a href="mailto:marketing@volunteerridapest.com" class="header-btn">Contact Us</a>
+      </nav>
 
     </div>
   </header>
 
-<!-- Promotions Section -->
-<div class="page-content-wrapper">
-  <div class="product-grid">
+  <section class="hero-banner">
+    <h1 class="hero-title">Volunteer Rid-A-Pest Marketing Portal</h1>
+    <p class="hero-subtitle">
+      Order branded materials, support local events, and give your team tools that build trust.
+    </p>
+  </section>
 
-    <!-- Card 1 -->
-    <a href="events.html" class="product-card-link">
-      <div class="product-card">
-        <img src="images/img1.png" alt="Event Image" class="flyer-thumb" />
-        <div class="product-title">Celebrate Your Community!</div>
-        <p>Reserve or Purchase Event Materials to Boost Morale and Sales.</p>
-        <div class="product-details button">Request Event Support</div>
+  <main>
+    <div class="page-content-wrapper">
+
+      <div class="product-grid" id="catalogGrid">
+
+        <!-- Card 1 -->
+        <a href="events-vrp.html" class="product-card searchable">
+          <div class="stack-card-layout">
+            <div class="flyer-thumb-container">
+              <img src="images/img1.png" alt="Volunteer Rid-A-Pest event support materials" class="flyer-thumb" />
+              <p class="flyer-zoom-text">Community event support</p>
+            </div>
+            <div class="compact-card-details">
+              <h2 class="product-title">Celebrate Your Community</h2>
+              <p class="product-description">
+                Reserve or request event materials that help Volunteer Rid-A-Pest show up strong in your market.
+              </p>
+              <div class="header-btn">Request Event Support</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="catalog.html" class="product-card searchable">
+          <div class="stack-card-layout">
+            <div class="flyer-thumb-container">
+              <img src="images/img2.png" alt="Volunteer Rid-A-Pest marketing materials" class="flyer-thumb" />
+              <p class="flyer-zoom-text">Marketing material catalog</p>
+            </div>
+            <div class="compact-card-details">
+              <h2 class="product-title">Strengthen the Conversation</h2>
+              <p class="product-description">
+                Explore branded flyers, leave-behinds, and support pieces that help your office communicate clearly.
+              </p>
+              <div class="header-btn">Browse Materials</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="thank-you-cards.html" class="product-card searchable">
+          <div class="stack-card-layout">
+            <div class="flyer-thumb-container">
+              <img src="images/img3.png" alt="Volunteer Rid-A-Pest thank you cards" class="flyer-thumb" />
+              <p class="flyer-zoom-text">Thank you cards</p>
+            </div>
+            <div class="compact-card-details">
+              <h2 class="product-title">Make the Difference</h2>
+              <p class="product-description">
+                Pair thoughtful service with branded thank you cards that leave a lasting impression.
+              </p>
+              <div class="header-btn">Request Thank You Cards</div>
+            </div>
+          </div>
+        </a>
+
       </div>
-    </a>
-
-    <!-- Card 2 -->
-    <a href="index.html" class="product-card-link">
-      <div class="product-card">
-        <img src="images/img2.png" alt="Teammate With Customer" class="flyer-thumb" />
-        <div class="product-title">Soften the Conversation!</div>
-        <p>Marketing is Ready to Do the Heavy Lifting. Explore Our Marketing Material Catalog.</p>
-        <div class="product-details button">Request Marketing Materials</div>
-      </div>
-    </a>
-
-    <!-- Card 3 -->
-    <a href="thank-you-cards.html" class="product-card-link">
-      <div class="product-card">
-        <img src="images/img3.png" alt="Thank You Cards" class="flyer-thumb" />
-        <div class="product-title">Make the Difference!</div>
-        <p>Pair a Gesture, Initiative, or Idea With Words that Last.</p>
-        <div class="product-details button">Request Thank You Cards</div>
-      </div>
-    </a>
-
-  </div>
-</div>
-
-<section class="feature-section">
-  <div class="feature-content">
-    <div class="feature-text-card">
-      <h2>#16. Enhance and Elevate</h2>
-      <p>
-        We assume the best in our team and customers while constantly striving to elevate
-        the days of others by being positive, uplifting, and having gratitude. We celebrate
-        each other by noticing and pointing out those extraordinary actions of our teammates.
-      </p>
-      <a 
-        href="Bug House Service Standard Guide.pdf" 
-        class="feature-btn" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        View Service Standards
-      </a>
     </div>
-    <div class="feature-image">
-      <img src="images/img4.png" alt="Live Healthier Today">
+
+    <section class="feature-section">
+      <div class="feature-content">
+        <div class="feature-text-card">
+          <h2>Enhance and Elevate</h2>
+
+          <div class="feature-details">
+            <p>
+              We assume the best in our team and customers while working to elevate every interaction.
+            </p>
+            <p>
+              We lead with gratitude, encouragement, and a commitment to serve with consistency.
+            </p>
+            <p>
+              We celebrate extraordinary actions that strengthen our people, our customers, and our brand.
+            </p>
+          </div>
+
+          <div style="margin-top: 1.25rem;">
+            <a
+              href="Volunteer-Rid-A-Pest-Service-Standards.pdf"
+              class="header-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Service Standards
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand-block">
+          <a href="catalog.html" class="footer-brand-link">
+            <img src="images/logos/vrp-logo.png" alt="Volunteer Rid-A-Pest Logo" class="footer-logo" />
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">Volunteer Rid-A-Pest Marketing Portal</span>
+              <span class="footer-brand-subtitle">VRP</span>
+            </div>
+          </a>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Portal</h3>
+          <div class="footer-links">
+            <a href="catalog.html">All Materials</a>
+            <a href="events-vrp.html">Events</a>
+            <a href="faq/index.html">FAQ</a>
+            <a href="mailto:marketing@volunteerridapest.com?subject=Marketing%20Request&body=Hi%20VRP%20Marketing%20Team,%0D%0A%0D%0AI%20need%20help%20with:%0D%0A-%0D%0A%0D%0AOffice:%0D%0AManager:%0D%0ADue%20Date:%0D%0A">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Materials</h3>
+          <div class="footer-links">
+            <a href="door-hangers.html">Door Hangers</a>
+            <a href="leave-behinds.html">Leave Behinds</a>
+            <a href="flyers.html">Flyers</a>
+            <a href="takeover.html">Takeover Cards</a>
+            <a href="thank-you-cards.html">Thank You Cards</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Support</h3>
+          <div class="footer-contact-list">
+            <span>Volunteer Rid-A-Pest Marketing Team</span>
+            <a href="mailto:marketing@volunteerridapest.com">
+              marketing@volunteerridapest.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Volunteer Rid-A-Pest</span>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const search = document.getElementById("catalogSearch");
+      const cards = document.querySelectorAll(".searchable");
 
+      if (search) {
+        search.addEventListener("input", function () {
+          const q = this.value.toLowerCase().trim();
+
+          cards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(q) ? "" : "none";
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
